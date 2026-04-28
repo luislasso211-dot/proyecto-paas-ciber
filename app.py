@@ -238,5 +238,7 @@ def logout():
     return redirect(url_for('home'))
 
 if __name__ == "__main__":
+    # DigitalOcean asigna un puerto en la variable de entorno PORT
     port = int(os.environ.get("PORT", 8080))
+    # Es VITAL que el host sea 0.0.0.0 para que sea accesible externamente
     app.run(host='0.0.0.0', port=port)
